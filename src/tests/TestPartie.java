@@ -226,17 +226,20 @@ public class TestPartie {
 		return ok;	
 	}
 	
-	/**
-	 * Tests unitaires de {@link application.Partie#verifAlignement()}
-	 * @return true si les test sont bon sinon false
-	 */
-	private static boolean testVerifAlignement() {
-		
-		boolean ok;
-		
-		
-		
-		return ok;
-	}
+	private static boolean test
+	
+	
+//	/**
+//	 * Tests unitaires de {@link application.Partie#verifAlignement()}
+//	 * @return true si les test sont bon sinon false
+//	 */
+//	private static boolean testVerifierAlignement() {
+//		
+//		boolean ok;
+//		
+//		
+//		
+//		return ok;
+//	}
 	
 }

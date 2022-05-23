@@ -70,6 +70,8 @@ public class Partie {
 		
 		grille[colonne][noVide] = joueur;
 		
+		verifierAlignement(colonne, noVide);
+		
 		return this;
 	}
 	
@@ -78,9 +80,73 @@ public class Partie {
 	 * en diagonale, a l'horizontale et a la verticale
 	 * @return true si il y a un alignement sinon false
 	 */
-	public boolean verifAlignement() {
-		return false;
+	public int verifierAlignement(int colonne, int ligne) {
+		
+		int resultatColonne,
+		    resultatLigne;
+		
+		resultatColonne = verifierColonne(colonne);
+		resultatLigne = verifierLigne(ligne);
+		if (resultatColonne != 0) {
+			System.out.println(resultatColonne);
+			return resultatColonne;
+		} else if (resultatLigne != 0) {
+			System.out.println(resultatColonne);
+			return resultatLigne;
+		} else {
+			System.out.println("Rien");
+			return 0;
+		}
+		
+		
+		
 	}
+	
+	/**
+	 * Permet la vérification de la colonne no colonne
+	 * @param colonne numéro de la colonne à verifier
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *         </ul>
+	 */
+	public int verifierColonne(int colonne) {
+
+		for (int noLigne = 0 ; noLigne <= 2 ; noLigne++) {
+			if (grille[colonne][noLigne] == grille[colonne][noLigne + 1]
+			    && grille[colonne][noLigne] == grille[colonne][noLigne + 2]
+			    && grille[colonne][noLigne] == grille[colonne][noLigne + 3]) {
+
+				return grille[colonne][noLigne];
+			}
+		}
+		
+		return 0;
+
+	} 
+	
+	/**
+	 * Permet la vérification de la ligne no ligne
+	 * @param ligne numéro de la ligne à verifier
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	 *         </ul>
+	 */
+	public int verifierLigne(int ligne) {
+
+		for (int noColonne = 0 ; noColonne <= 3 ; noColonne++) {
+			if (grille[noColonne][ligne] == grille[noColonne + 1][ligne]
+			    && grille[noColonne][ligne] == grille[noColonne + 2][ligne]
+			    && grille[noColonne][ligne] == grille[noColonne + 3][ligne]) {
+
+				return grille[noColonne][ligne];
+			}
+		}
+		
+		return 0;
+	}
+
 	
 	/**
 	 * Test si la grille de cette partie est pleine
