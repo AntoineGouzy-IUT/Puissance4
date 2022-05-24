@@ -11,7 +11,7 @@ import application.Partie;
 /**
  * Test unitaire de {@link logiciel.Partie}
  * @author vincent.faure
- * Version 0.1 
+ * @author romain.courbaize
  */
 public class TestPartie {
 
@@ -21,13 +21,13 @@ public class TestPartie {
 	 */
 	public static void main(String[] args) {
 		
-		System.out.println(testPartieStringString() ? "Test ok " : "Echec test");
+//		System.out.println(testPartieStringString() ? "Test ok " : "Echec test");
+//		
+//		System.out.println(testAjouterPion() ? "Test ok " : "Echec test");
+//		
+//		System.out.println(testGetGrille() ? "Test ok " : "Echec test");
 		
-		System.out.println(testAjouterPion() ? "Test ok " : "Echec test");
-		
-		System.out.println(testGetGrille() ? "Test ok " : "Echec test");
-		
-		System.out.println(testVerifAlignement() ? "Test ok " : "Echec test");
+		System.out.println(testVerifierAlignement() ? "Test ok " : "Echec test");
 		
 	}
 
@@ -226,7 +226,89 @@ public class TestPartie {
 		return ok;	
 	}
 	
-	private static boolean test
+	/**
+	 * Tests unitaires de {@link application.Partie#verifierAlignement(int, int)}
+	 * @return
+	 */
+	private static boolean testVerifierAlignement() {
+		
+		boolean ok = true;
+		
+		Partie partieTest = new Partie("Michel", "Vincent");
+		
+		/* Tests Lignes */
+		
+		// Test Ligne no1
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 0) == 0;
+		partieTest.ajouterPion(1, 1);
+		ok &= partieTest.verifierAlignement(1, 0) == 0;
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 0) == 0;
+		partieTest.ajouterPion(1, 3);
+		ok &= partieTest.verifierAlignement(3, 0) == 1;
+		
+		//TestLigne no2
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 1) == 0;
+		partieTest.ajouterPion(1, 1);
+		ok &= partieTest.verifierAlignement(1, 1) == 0;
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 1) == 0;
+		partieTest.ajouterPion(1, 3);
+		ok &= partieTest.verifierAlignement(3, 1) == 1;
+		
+		//TestLigne no3
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 2) == 0;
+		partieTest.ajouterPion(1, 1);
+		ok &= partieTest.verifierAlignement(1, 2) == 0;
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 2) == 0;
+		partieTest.ajouterPion(1, 3);
+		ok &= partieTest.verifierAlignement(3, 2) == 1;
+		
+		/* Tests Colonnes */
+		
+		partieTest = new Partie("Michel", "Vincent");
+		
+		// Test Colonne no1
+		
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 0) == 0;
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 1) == 0;
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 2) == 0;
+		partieTest.ajouterPion(1, 0);
+		ok &= partieTest.verifierAlignement(0, 3) == 1;
+		 
+		// Test Colonne no3
+		
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 0) == 0;
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 1) == 0;
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 2) == 0;
+		partieTest.ajouterPion(1, 2);
+		ok &= partieTest.verifierAlignement(2, 3) == 1;
+		
+		// Test Colonne no2
+		
+		partieTest.ajouterPion(1, 1);
+		ok &= partieTest.verifierAlignement(1, 0) == 0;
+		partieTest.ajouterPion(2, 1);
+		ok &= partieTest.verifierAlignement(1, 1) == 0;
+		partieTest.ajouterPion(2, 1);
+		ok &= partieTest.verifierAlignement(1, 2) == 0;
+		partieTest.ajouterPion(2, 1);
+		ok &= partieTest.verifierAlignement(1, 3) == 0;
+		partieTest.ajouterPion(2, 1);
+		ok &= partieTest.verifierAlignement(1, 4) == 2;
+		
+		return ok;
+	}
 	
 	
 //	/**
