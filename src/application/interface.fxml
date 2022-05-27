@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="1024.0" prefWidth="1440.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox alignment="CENTER" layoutX="424.0" layoutY="385.0" prefHeight="319.0" prefWidth="522.0" spacing="10.0" styleClass="menu">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="400.0" styleClass="button_menu">
+                  </Button>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="400.0" styleClass="button_menu">
+                  </Button>
+            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="400.0" styleClass="button_menu">
+                  </Button>
+         </children></VBox>
+   </children>
+</AnchorPane>
