@@ -83,20 +83,28 @@ public class Partie {
 	public int verifierAlignement(int colonne, int ligne) {
 		
 		int resultatColonne,
-		    resultatLigne;
+		    resultatLigne,
+		    resultatDiagonale;
 		
 		resultatColonne = verifierColonne(colonne);
 		resultatLigne = verifierLigne(ligne);
+		resultatDiagonale = verifierDiagonal(colonne, ligne);
+		
 		if (resultatColonne != 0) {
-			System.out.println(resultatColonne);
+			System.out.println(resultatColonne + "Colonne");
 			return resultatColonne;
-		} else if (resultatLigne != 0) {
-			System.out.println(resultatColonne);
-			return resultatLigne;
-		} else {
-			System.out.println("Rien");
-			return 0;
 		}
+		if (resultatLigne != 0) {
+			System.out.println(resultatLigne + "Ligne");
+			return resultatLigne;
+		}
+		if (resultatDiagonale != 0) {
+			System.out.println(resultatDiagonale + "Diagonale");
+			return resultatDiagonale;
+		}
+		
+		System.out.println("Rien");
+		return 0;
 		
 		
 		
@@ -142,6 +150,75 @@ public class Partie {
 
 				return grille[noColonne][ligne];
 			}
+		}
+		
+		return 0;
+	}
+	
+	/**
+	 * 
+	 * @return
+	 */
+	public int verifierDiagonal(int colonne, int ligne) {
+		
+		/* Diagonale Haut Droite - Bas Gauche*/
+		
+		int cptPion = 0;
+		int index = 0;
+		
+		while (colonne - index >= 0 
+			   && ligne - index >= 0
+			   && grille[colonne][ligne] 
+				  == grille[colonne - index][ligne - index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		index = 1;
+		
+		while (colonne + index <= grille.length
+			   && ligne + index <= grille[colonne].length
+			   && grille[colonne][ligne] 
+				  == grille[colonne + index][ligne + index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		if (cptPion > 3) {
+			System.out.println("Haut Droite - Bas Gauche");
+			return grille[colonne][ligne];
+		}
+		
+		/* Else : Diagonale Haut Gauche - Bas Droite*/
+		
+		index = 0;
+		cptPion = 0;
+		
+		while (colonne - index >= 0
+			   && ligne + index <= grille[colonne].length
+			   && grille[colonne][ligne] 
+				  == grille[colonne - index][ligne + index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		index = 1;
+		
+		while (colonne + index <= grille.length
+				   && ligne - index >= 0
+				   && grille[colonne][ligne] 
+					  == grille[colonne + index][ligne - index]) {
+				
+			    index++;
+				cptPion++;
+			}
+		
+		if (cptPion > 3) {
+			System.out.println("Haut Gauche - Bas Droite");
+			return grille[colonne][ligne];
 		}
 		
 		return 0;

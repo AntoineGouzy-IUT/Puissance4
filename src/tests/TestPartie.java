@@ -307,6 +307,8 @@ public class TestPartie {
 		partieTest.ajouterPion(2, 1);
 		ok &= partieTest.verifierAlignement(1, 4) == 2;
 		
+		
+		
 		return ok;
 	}
 	
