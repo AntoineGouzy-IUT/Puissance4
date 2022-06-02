@@ -7,9 +7,7 @@
 package application;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
@@ -58,16 +56,22 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Calcul une position pour le prochain pion
+	 * Positionne le pion pour l'ordinateur
 	 */
 	public void ordinateur() {
 		
+		int resultatDefense;
 		
+		resultatDefense = defense();
+		
+		if (resultatDefense > -1) {
+			ajouterPion(2, resultatDefense);
+		}
 	}
 	
 	/**
 	 * Calcul la position d'un pion pour défendre
-	 * Si l'adversaire à 3 pions alignés alors elle va le bloquer
+	 * Si l'adversaire a 3 pions alignés alors elle va le bloquer
 	 * @return <ul>
 	 * 			<li>-1 s'il n'y a aucune ligne, diagonale ou colonne de 3 pions</li>
 	 * 			<li>le numéro de la colonne s'il faut défendre</li>
@@ -79,67 +83,68 @@ public class Partie implements Serializable {
 		
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 			
-			ajouterPionIA(1, noColonneATester, grilleTmp);
-			verifierAlignement(noColonneATester, noColonneATester)
+			if (ajouterPionIA(1, noColonneATester, grilleTmp)) {
+				
+				return noColonneATester;
+			};
 		}
+		return -1;
 	}
 	
 	/**
-	 * Ajout d'un pion dans cette partie pour tester les posibilitées
-	 * @param joueur   numéro du joueur qui ajoute ce pion
-	 * @param colonne  numéro de la colonne dans laquelle il ajoute ce pion
+	 * Calcul la position d'un pion pour attaquer
+	 * S'il y a 3 pions alignés alors elle va le bloquer
+	 * @return <ul>
+	 * 			<li>-1 s'il n'y a aucune ligne, diagonale ou colonne de 3 pions</li>
+	 * 			<li>le numéro de la colonne s'il faut défendre</li>
+	 * 		   </ul>
 	 */
-	private int ajouterPionIA(int joueur, int colonne, int[][] grille) {
+	public int attaque() {
+		
+		int[][] grilleTmp = grille;
+		
+		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
+			
+			if (ajouterPionIA(2, noColonneATester, grilleTmp)) {
+				
+				return noColonneATester;
+			};
+		}
+		return -1;
+	}
+	
+	/**
+	 * Ajout d'un pion dans cette partie sur une grille tampon
+	 * et vérifie s'il y a possibilité pour le joueur de gagner
+	 * @param joueur  numéro du joueur qui ajoute ce pion
+	 * @param colonne axe horizontal du jeton 
+	 * @param ligne   axe vertical du jeton
+	 * @param grille  à vérifier
+	 * 
+	 * @return true si cette colonne est gagnante, false sinon
+	 *         
+	 * @throws IllegalArgumentException  Si le numéro de la colonne est incorrect 
+	 *                                   Si le numéro du joueur est incorrect
+	 */
+	private boolean ajouterPionIA(int joueur, int colonne, int[][] grille) {
 		
 		int noVide;
 		
 		noVide = 0;
 		
 		while (grille[colonne][noVide] != 0) {
-			
 			noVide++;
+			
 		}
-		
 		grille[colonne][noVide] = joueur;
 		
-		return verifierAlignementIA(colonne, noVide, grille);
-	}
-	
-	/**
-	 * Vérifie si il y a un alignement de 4 pion identique
-	 * en diagonale, a l'horizontale et a la verticale
-	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
-	 *         </ul>
-	 */
-	public int verifierAlignement(int colonne, int ligne, int[][] grille) {
-		
-		int resultatColonne,
-		    resultatLigne,
-		    resultatDiagonale;
-		
-		resultatColonne = verifierColonne(colonne);
-		resultatLigne = verifierLigne(ligne);
-		resultatDiagonale = verifierDiagonal(colonne, ligne);
-		
-		if (resultatColonne != 0) {
-			return resultatColonne;
-		}
-		if (resultatLigne != 0) {
-			return resultatLigne;
-		}
-		if (resultatDiagonale != 0) {
-			return resultatDiagonale;
-		}
-		
-		return 0;
+		return verifierAlignement(colonne, noVide, grille);
 	}
 	
 	/**
 	 * Ajout d'un pion dans cette partie
 	 * @param joueur   numéro du joueur qui ajoute ce pion
-	 * @param colonne  numéro de la colonne dans laquelle il ajoute ce pion
+	 * @param colonne axe horizontal du jeton 
 	 * @return cette partie avec le pion ajouter 
 	 * @throws IllegalArgumentException  Si le numéro de la colonne est incorrect 
 	 *                                   Si le numéro du joueur est incorrect
@@ -171,6 +176,8 @@ public class Partie implements Serializable {
 	/**
 	 * Vérifie si il y a un alignement de 4 pion identique
 	 * en diagonale, a l'horizontale et a la verticale
+	 * @param colonne axe horizontal du jeton 
+	 * @param ligne   axe vertical du jeton
 	 * @return <ul>
 	 *		 <li>Le numéro du joueur gagnant</li>
 	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
@@ -200,8 +207,27 @@ public class Partie implements Serializable {
 	}
 	
 	/**
+	 * Vérifie si il y a un alignement de 4 pion identique
+	 * en diagonale, a l'horizontale et a la verticale
+	 * @param colonne axe horizontal du jeton 
+	 * @param ligne   axe vertical du jeton
+	 * @param grille  à vérifier
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *         </ul>
+	 */
+	private boolean verifierAlignement(int colonne, int ligne, int[][] grille) {
+		
+		return verifierColonne(colonne, grille) != 0
+			   || verifierLigne(ligne, grille) != 0
+			   || verifierDiagonal(colonne, ligne, grille) != 0 ;
+	}
+	
+	/**
 	 * Permet la vérification de la colonne no colonne
 	 * @param colonne numéro de la colonne à verifier
+	 * @param colonne axe horizontal du jeton 
 	 * @return <ul>
 	 *		 <li>Le numéro du joueur gagnant</li>
 	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
@@ -219,12 +245,34 @@ public class Partie implements Serializable {
 		}
 		
 		return 0;
+	} 
+	
+	/**
+	 * Permet la vérification de la colonne no colonne
+	 * @param colonne axe horizontal du jeton 
+	 * @param grille  à vérifier
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *         </ul>
+	 */
+	private int verifierColonne(int colonne, int[][] grille) {
 
+		for (int noLigne = 0 ; noLigne <= 2 ; noLigne++) {
+			if (grille[colonne][noLigne] == grille[colonne][noLigne + 1]
+			    && grille[colonne][noLigne] == grille[colonne][noLigne + 2]
+			    && grille[colonne][noLigne] == grille[colonne][noLigne + 3]) {
+
+				return grille[colonne][noLigne];
+			}
+		}
+		
+		return 0;
 	} 
 	
 	/**
 	 * Permet la vérification de la ligne no ligne
-	 * @param ligne numéro de la ligne à verifier
+	 * @param ligne   axe vertical du jeton
 	 * @return <ul>
 	 *		 <li>Le numéro du joueur gagnant</li>
 	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
@@ -244,8 +292,33 @@ public class Partie implements Serializable {
 		return 0;
 	}
 	
+	 /**
+	  * Permet la vérification de la ligne no ligne
+	 * @param ligne   axe vertical du jeton
+	 * @param grille  à vérifier
+	  * @return <ul>
+	  *		 <li>Le numéro du joueur gagnant</li>
+	  *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	  *         </ul>
+	  */
+	 private int verifierLigne(int ligne, int[][] grille) {
+
+		 for (int noColonne = 0 ; noColonne <= 3 ; noColonne++) {
+			 if (grille[noColonne][ligne] == grille[noColonne + 1][ligne]
+			     && grille[noColonne][ligne] == grille[noColonne + 2][ligne]
+				 && grille[noColonne][ligne] == grille[noColonne + 3][ligne]) {
+
+				 return grille[noColonne][ligne];
+			 }
+		 }
+
+		 return 0;
+	 }
+	 
 	/**
 	 * Permet la vérification des deux diagonales
+	 * @param colonne axe horizontal du jeton 
+	 * @param ligne   axe vertical du jeton
 	 * @return <ul>
 	 *		 <li>Le numéro du joueur gagnant</li>
 	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
@@ -314,6 +387,79 @@ public class Partie implements Serializable {
 		return 0;
 	}
 	
+	/**
+	 * Permet la vérification des deux diagonales
+	 * @param colonne axe horizontal du jeton 
+	 * @param ligne   axe vertical du jeton
+	 * @param grille  à vérifier
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	 *         </ul>
+	 */
+	private int verifierDiagonal(int colonne, int ligne, int[][] grille) {
+		
+		/* Diagonale Haut Droite - Bas Gauche*/
+		
+		int cptPion = 0;
+		int index = 0;
+		
+		while (colonne - index >= 0 
+			   && ligne - index >= 0
+			   && grille[colonne][ligne] 
+				  == grille[colonne - index][ligne - index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		index = 1;
+		
+		while (colonne + index < grille.length
+			   && ligne + index < grille[colonne].length
+			   && grille[colonne][ligne] 
+				  == grille[colonne + index][ligne + index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		if (cptPion > 3) {
+			return grille[colonne][ligne];
+		}
+		
+		/* Else : Diagonale Haut Gauche - Bas Droite*/
+		
+		index = 0;
+		cptPion = 0;
+		
+		while (colonne - index >= 0
+			   && ligne + index < grille[colonne].length
+			   && grille[colonne][ligne] 
+				  == grille[colonne - index][ligne + index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		index = 1;
+		
+		while (colonne + index < grille.length
+				   && ligne - index >= 0
+				   && grille[colonne][ligne] 
+					  == grille[colonne + index][ligne - index]) {
+				
+			    index++;
+				cptPion++;
+			}
+		
+		if (cptPion > 3) {
+			return grille[colonne][ligne];
+		}
+		
+		return 0;
+	}
+	 
 	/**
 	 * @return la grille de cette partie
 	 */
