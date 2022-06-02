@@ -26,8 +26,18 @@ public class TestPartie {
 //		System.out.println(testAjouterPion() ? "Test ok " : "Echec test");
 //		
 //		System.out.println(testGetGrille() ? "Test ok " : "Echec test");
+//		
+//		System.out.println(testVerifierAlignement() ? "Test ok " : "Echec test");
 		
-		System.out.println(testVerifierAlignement() ? "Test ok " : "Echec test");
+		testSauvegarder();
+		
+	}
+	
+	private static void testSauvegarder() {
+
+		Partie partieTest = new Partie("Jean", "Hercule");
+		
+		partieTest.save();
 		
 	}
 

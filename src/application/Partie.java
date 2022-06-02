@@ -1,30 +1,44 @@
 /*
- * 
+ * Partie.java                                   05/2022
+ * BUT INFO 1 2021/2022
+ * pas de droits d'auteur ni de copyright
  */
 
 package application;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+
 /**
- * 
+ * Partie de puissance 4 sur une grille de 7 x 6
  * @author vincent.faure
- *
+ * @author romain.courbaize
+ * @author antoine.gouzy
  */
-public class Partie {
+public class Partie implements Serializable {
 	
-	/**Grille de cette partie*/
+	/** Grille de cette partie */
 	private static int[][] grille;
 	
-	/**Pion du joueur 1*/
+	/** Pion du joueur 1 */
 	private final int JOUEUR1 = 1;
 	
-	/**Pion du joueur 2*/
+	/** Pion du joueur 2 */
 	private final int JOUEUR2 = 2;
 	
-	/**Nom du premier joueur*/
-	private final String NOM_JOUEUR_1;
+	/** Nom du premier joueur */
+	private String nomJoueur1;
 	
-	/**Nom du deuxième joueur*/
-	private final String NOM_JOUEUR_2;
+	/** Nom du deuxième joueur */
+	private String nomJoueur2;
+	
+	/** Numéro de la ligne joué par le dernier joueur */
+	private int ancienneLigne = 0; //TODO stub
 	
 	/**
 	 * Definition de cette partie
@@ -37,10 +51,89 @@ public class Partie {
 			throw new NullPointerException("Nom du joueur null ou vide !");
 		}
 		
-		NOM_JOUEUR_1 = nomJoueur1;
-		NOM_JOUEUR_2 = nomJoueur2;
+		this.nomJoueur1 = nomJoueur1;
+		this.nomJoueur2 = nomJoueur2;
 		
 		grille = new int[7][6];
+	}
+	
+	/**
+	 * Calcul une position pour le prochain pion
+	 */
+	public void ordinateur() {
+		
+		
+	}
+	
+	/**
+	 * Calcul la position d'un pion pour défendre
+	 * Si l'adversaire à 3 pions alignés alors elle va le bloquer
+	 * @return <ul>
+	 * 			<li>-1 s'il n'y a aucune ligne, diagonale ou colonne de 3 pions</li>
+	 * 			<li>le numéro de la colonne s'il faut défendre</li>
+	 * 		   </ul>
+	 */
+	public int defense() {
+		
+		int[][] grilleTmp = grille;
+		
+		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
+			
+			ajouterPionIA(1, noColonneATester, grilleTmp);
+			verifierAlignement(noColonneATester, noColonneATester)
+		}
+	}
+	
+	/**
+	 * Ajout d'un pion dans cette partie pour tester les posibilitées
+	 * @param joueur   numéro du joueur qui ajoute ce pion
+	 * @param colonne  numéro de la colonne dans laquelle il ajoute ce pion
+	 */
+	private int ajouterPionIA(int joueur, int colonne, int[][] grille) {
+		
+		int noVide;
+		
+		noVide = 0;
+		
+		while (grille[colonne][noVide] != 0) {
+			
+			noVide++;
+		}
+		
+		grille[colonne][noVide] = joueur;
+		
+		return verifierAlignementIA(colonne, noVide, grille);
+	}
+	
+	/**
+	 * Vérifie si il y a un alignement de 4 pion identique
+	 * en diagonale, a l'horizontale et a la verticale
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *         </ul>
+	 */
+	public int verifierAlignement(int colonne, int ligne, int[][] grille) {
+		
+		int resultatColonne,
+		    resultatLigne,
+		    resultatDiagonale;
+		
+		resultatColonne = verifierColonne(colonne);
+		resultatLigne = verifierLigne(ligne);
+		resultatDiagonale = verifierDiagonal(colonne, ligne);
+		
+		if (resultatColonne != 0) {
+			return resultatColonne;
+		}
+		if (resultatLigne != 0) {
+			return resultatLigne;
+		}
+		if (resultatDiagonale != 0) {
+			return resultatDiagonale;
+		}
+		
+		return 0;
 	}
 	
 	/**
@@ -66,8 +159,8 @@ public class Partie {
 		
 		while (grille[colonne][noVide] != 0) {
 			noVide++;
+			
 		}
-		
 		grille[colonne][noVide] = joueur;
 		
 		verifierAlignement(colonne, noVide);
@@ -78,28 +171,32 @@ public class Partie {
 	/**
 	 * Vérifie si il y a un alignement de 4 pion identique
 	 * en diagonale, a l'horizontale et a la verticale
-	 * @return true si il y a un alignement sinon false
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *         </ul>
 	 */
 	public int verifierAlignement(int colonne, int ligne) {
 		
 		int resultatColonne,
-		    resultatLigne;
+		    resultatLigne,
+		    resultatDiagonale;
 		
 		resultatColonne = verifierColonne(colonne);
 		resultatLigne = verifierLigne(ligne);
+		resultatDiagonale = verifierDiagonal(colonne, ligne);
+		
 		if (resultatColonne != 0) {
-			System.out.println(resultatColonne);
 			return resultatColonne;
-		} else if (resultatLigne != 0) {
-			System.out.println(resultatColonne);
+		}
+		if (resultatLigne != 0) {
 			return resultatLigne;
-		} else {
-			System.out.println("Rien");
-			return 0;
+		}
+		if (resultatDiagonale != 0) {
+			return resultatDiagonale;
 		}
 		
-		
-		
+		return 0;
 	}
 	
 	/**
@@ -146,25 +243,118 @@ public class Partie {
 		
 		return 0;
 	}
-
 	
 	/**
-	 * Test si la grille de cette partie est pleine
-	 * @return true si la grille est pleine sinon false
+	 * Permet la vérification des deux diagonales
+	 * @return <ul>
+	 *		 <li>Le numéro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	 *         </ul>
 	 */
-	public boolean estComplet() {
-		//TODO a completer
-		return false;
+	public int verifierDiagonal(int colonne, int ligne) {
+		
+		/* Diagonale Haut Droite - Bas Gauche*/
+		
+		int cptPion = 0;
+		int index = 0;
+		
+		while (colonne - index >= 0 
+			   && ligne - index >= 0
+			   && grille[colonne][ligne] 
+				  == grille[colonne - index][ligne - index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		index = 1;
+		
+		while (colonne + index < grille.length
+			   && ligne + index < grille[colonne].length
+			   && grille[colonne][ligne] 
+				  == grille[colonne + index][ligne + index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		if (cptPion > 3) {
+			return grille[colonne][ligne];
+		}
+		
+		/* Else : Diagonale Haut Gauche - Bas Droite*/
+		
+		index = 0;
+		cptPion = 0;
+		
+		while (colonne - index >= 0
+			   && ligne + index < grille[colonne].length
+			   && grille[colonne][ligne] 
+				  == grille[colonne - index][ligne + index]) {
+			
+			index++;
+			cptPion++;
+		}
+		
+		index = 1;
+		
+		while (colonne + index < grille.length
+				   && ligne - index >= 0
+				   && grille[colonne][ligne] 
+					  == grille[colonne + index][ligne - index]) {
+				
+			    index++;
+				cptPion++;
+			}
+		
+		if (cptPion > 3) {
+			return grille[colonne][ligne];
+		}
+		
+		return 0;
 	}
 	
 	/**
-	 * 
 	 * @return la grille de cette partie
 	 */
 	public int[][] getGrille() {
 		return grille;
 	}
 	
+
+	public String getNomJoueur1() {
+		return nomJoueur1;
+	}
+
+	public String getNomJoueur2() {
+		return nomJoueur2;
+	}
+
+	public void save() {
+		
+		try (FileOutputStream fos = new FileOutputStream("p4.ser");
+			 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+			
+			oos.writeObject(this);
+		} catch (Exception erreurFichier) {
+			// TODO: handle exception
+		}
+	}
+	
+	public void load() {
+		
+		try (FileInputStream fis = new FileInputStream("p4.ser");
+			 ObjectInputStream ois = new ObjectInputStream(fis)) {
+			
+			Partie partieLoad = (Partie)ois.readObject();
+			
+			grille = partieLoad.getGrille();
+			nomJoueur1 = partieLoad.getNomJoueur1();
+			nomJoueur2 = partieLoad.getNomJoueur2();
+		} catch (Exception erreurFichier) {
+			// TODO: handle exception
+		}
+	}
 	
 	//TODO Effectuer les tests
 	@Override
