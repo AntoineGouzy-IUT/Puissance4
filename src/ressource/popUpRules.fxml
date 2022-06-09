@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PopUpController">
+   <children>
+      <ScrollPane prefHeight="707.0" prefWidth="1074.0" styleClass="srollpane">
+         <content>
+            <VBox styleClass="rules_pane">
+               <children>
+                  <Label styleClass="label_game" text="Règles du jeu" />
+		              <VBox styleClass="rules_container">
+		              	<children>
+		                  <Label styleClass="rules_title" text="Principe de base" />
+		                  <HBox styleClass="rules_text_container">
+		                     <children>
+		                        <Label styleClass="rules_text" text="Le puissance 4 se joue dans une grille de 6  lignes par 7 colonnes. Pour gagner la partie il faut être le premier a aligné 4 jetons de façon horizontale, vertical ou en diagonale.  Si lors d’une partie, tous les jetons sont joués sans qu’il y est d’alignement de jetons, la partie est déclaré nulle. " />
+		                        
+									<ImageView>
+								       <image>
+								          <Image url="@assets/RulesBasicGame.png" />
+								       </image>
+								    </ImageView>
+		                     </children>
+		                  </HBox>
+		                  <Label styleClass="rules_title" text="Joueur contre Joueur" />
+		                  <HBox styleClass="rules_text_container">
+		                     <children>
+		                        <Label styleClass="rules_text" text="Pour commencer une partie de puissance 4, on désigne aléatoirement le premier joueur. Celui­-ci met un de ses jetons de couleur dans l’une des colonnes de son choix. Le jeton tombe alors en bas de la colonne." />
+		                        	  <ImageView>
+								         <image>
+								            <Image url="@assets/RulesPvpOne.png" />
+								         </image>
+								      </ImageView>
+		                     </children>
+		                  </HBox>
+		                  <HBox styleClass="rules_text_container">
+		                     <children>
+		                        <Label styleClass="rules_text" text="Le deuxième joueur insère à son tour son jeton, de l’autre couleur dans la colonne de son choix. Et ainsi de suite jusqu’à obtenir une rangée de 4 jetons de même couleur." />
+		                        	  <ImageView>
+								         <image>
+								            <Image url="@assets/RulesPvpTwo.png" />
+								         </image>
+								      </ImageView>
+		                     </children>
+		                  </HBox>
+		                  <Label styleClass="rules_title" text="Joueur contre Ordinateur" />
+		                  <Label styleClass="rules_text" text="Pour commencer une partie de puissance 4, le joueur commence a jouer. Celui­-ci met un de ses jetons de couleur dans l’une des colonnes de son choix. Le jeton tombe alors en bas de la colonne.
+
+L’ordinateur joue comme un humain, il insère  à son tour son jeton, de l’autre couleur dans la colonne de son choix. Et ainsi de suite jusqu’à obtenir une rangée de 4 jetons de même couleur." />
+	                  	</children>
+	                  </VBox>
+	               <HBox styleClass="button_container">
+		               <children>
+		               		<Button fx:id="button" styleClass="white_medium_button" mnemonicParsing="false" onAction="#closePopUp" text="Retour" />
+		               </children>
+	               </HBox>   
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox stylesheets="@popUp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.PopUpController">
+	<styleClass>
+		<String fx:value="popUp" />
+		<String fx:value="popUpSolo" />
+	</styleClass>
+  	<children>
+		<Label styleClass="label_game" text="Veuillez saisir votre pseudonyme" />
+		<VBox styleClass="user_container_solo">
+			<children>
+				<HBox styleClass="user_info_container_solo">
+					<children>
+						<Label styleClass="label_user" text="Joueur" />
+						<TextField styleClass="user_entry" promptText="Ex : Joueur Humain" fx:id="player1"/>
+					</children>
+				</HBox>
+			</children>
+		</VBox>
+		<HBox styleClass="button_container_popUp">
+			<children>
+				<Button  fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#goBackPopUp" text="Retour" />
+				<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#playPvC" text="Jouer" />
+			</children>
+		</HBox>
+	</children>
+</VBox>

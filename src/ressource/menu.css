@@ -1,0 +1,186 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@700&display=swap');
+
+.main{
+	-fx-pref-height: 705px;
+	-fx-pref-width: 1074px;
+	-fx-alignment: center;
+	-fx-spacing: 60px;
+	-fx-background-color: #EAEAEA;
+}
+
+.menu{
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 85px;
+	-fx-min-height: 319px;
+	-fx-min-width: 522px;
+	-fx-max-height: 319px;
+	-fx-max-width: 522px;
+}
+
+.button_menu{
+	-fx-min-height: 67px;
+	-fx-min-width: 432px;
+	-fx-background-color: transparent; 
+    -fx-background-size: cover;
+}
+
+.new_game{
+	-fx-background-image: url("assets/NewGameInactive.png");
+}
+.new_game:hover{
+	-fx-background-image: url("assets/NewGameActive.png");
+}
+
+.my_games{
+	-fx-background-image: url("assets/MyGamesInactive.png");
+}
+.my_games:hover{
+	-fx-background-image: url("assets/MyGamesActive.png");
+}
+
+.credits{
+	-fx-background-image: url("assets/CreditsInactive.png");
+}
+.credits:hover{
+	-fx-background-image: url("assets/CreditsActive.png");
+}
+
+.menu_game{
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 85px;
+	-fx-min-height: 396px;
+	-fx-min-width: 522px;
+	-fx-max-height: 396px;
+	-fx-max-width: 522px;
+	-fx-spacing: 10px;
+}
+
+.label_game{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 48px;
+}
+
+.pvp{
+	-fx-background-image: url("assets/PvPInactive.png");
+}
+.pvp:hover{
+	-fx-background-image: url("assets/PvPActive.png");
+}
+
+.pvo{
+	-fx-background-image: url("assets/PvOInactive.png");
+}
+.pvo:hover{
+	-fx-background-image: url("assets/PvOActive.png");
+}
+
+.rules{
+	-fx-background-image: url("assets/RulesInactive.png");
+}
+.rules:hover{
+	-fx-background-image: url("assets/RulesActive.png");
+}
+
+.back{
+	-fx-background-image: url("assets/BackInactive.png");
+}
+.back:hover{
+	-fx-background-image: url("assets/BackActive.png");
+}
+ 
+.scrollpane{
+	-fx-background-color: #EAEAEA;
+	-fx-alignment: center;
+}
+
+.rules_pane{
+	-fx-padding: 50 0 50 0;
+	-fx-min-width: 1050.0;
+	-fx-alignment: center;
+	-fx-spacing: 60px;
+}
+
+.rules_container{
+	-fx-pref-height: 1110px;
+	-fx-pref-width: 1026px;
+	-fx-max-width: 1026px;
+	-fx-padding: 70 90 70 90;
+	-fx-spacing: 16px;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 100px;
+}
+
+.rules_title{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 36px;
+	-fx-text-fill: #FFFFFF;
+}
+
+.rules_text_container{
+	-fx-pref-height: 203px;
+	-fx-pref-width: 846px;
+	-fx-alignment: center;
+	-fx-spacing: 53px;
+}
+
+
+.rules_text{
+	-fx-wrap-text: true;
+	-fx-font-family: 'M PLUS 1p', sans-serif;
+	-fx-font-size: 16px;
+	-fx-text-fill: #FFFFFF;	
+}
+
+.button_container{
+	-fx-max-width: 1022px;
+	-fx-alignment: bottom-right;
+}
+
+.white_medium_button{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-min-height: 60px;
+	-fx-min-width: 120px;
+	-fx-background-color: #FFFFFF;
+	-fx-background-radius: 50px;
+	-fx-font-size: 20px;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 6);
+}
+
+.credits_pane {
+	-fx-padding: 50 0 50 0;
+	-fx-min-width: 1050px;
+	-fx-min-height : 1179px; 
+	-fx-alignment: center;
+	-fx-spacing: 60px;
+}
+
+.credits_srcollpane {
+	-fx-min-width : 1074px;
+	-fx-background-color: #EAEAEA;
+	-fx-alignment: center;
+}
+
+.credits_container{
+	-fx-min-height: 834px;
+	-fx-min-width: 472px;
+	-fx-max-height: 834px;
+	-fx-max-width: 472px;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 100px;
+	-fx-spacing : 50px;
+	-fx-padding : 70px;
+	-fx-alignment : center;
+}
+
+.name_container {
+	-fx-alignment : center;
+}
+
+.name {
+	-fx-font-family: 'M PLUS 1p', sans-serif;
+	-fx-font-size: 28px;
+	-fx-text-fill: #FFFFFF;
+}
