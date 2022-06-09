@@ -27,7 +27,7 @@ public class Partie implements Serializable {
 	/** Nom du premier joueur */
 	private String nomJoueur1;
 	
-	/** Nom du deuxième joueur */
+	/** Nom du deuxiÃ¨me joueur */
 	private String nomJoueur2;
 	
 	/**
@@ -49,9 +49,9 @@ public class Partie implements Serializable {
 	
 	/**
 	 * Positionne le pion pour l'ordinateur
-	 * Défend  - si le joueur humain a 3 pions alignés
-	 * Attaque - si l'IA a 3 pions alignés, elle gagne
-	 *           si non, elle complète la ligne, la colonne ou la diagonale
+	 * DÃ©fend  - si le joueur humain a 3 pions alignÃ©s
+	 * Attaque - si l'IA a 3 pions alignÃ©s, elle gagne
+	 *           si non, elle complÃ¨te la ligne, la colonne ou la diagonale
 	 */
 	public void ordinateur() {
 		
@@ -66,12 +66,12 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Calcul la position d'un pion pour défendre
-	 * Si l'adversaire a 3 pions alignés alors elle va indiquer la position
-	 * du jeton pour défendre
+	 * Calcul la position d'un pion pour dÃ©fendre
+	 * Si l'adversaire a 3 pions alignÃ©s alors elle va indiquer la position
+	 * du jeton pour dÃ©fendre
 	 * @return <ul>
 	 * 			<li>-1 s'il n'y a aucune ligne, diagonale ou colonne de 3 pions</li>
-	 * 			<li>le numéro de la colonne s'il faut défendre</li>
+	 * 			<li>le numÃ©ro de la colonne s'il faut dÃ©fendre</li>
 	 * 		   </ul>
 	 */
 	public int defense() {
@@ -90,7 +90,7 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Permet de copier un tableau en 2 dimensions avec la méthode clone() 
+	 * Permet de copier un tableau en 2 dimensions avec la mÃ©thode clone() 
 	 * 
 	 * @param aCopier Tableau que l'on veut copier
 	 * @return La copie dans un tableau 
@@ -112,11 +112,11 @@ public class Partie implements Serializable {
 	
 	/**
 	 * Calcul la position d'un pion pour attaquer
-	 * Attaque - si l'IA a 3 pions alignés, elle gagne
-	 *           si non, elle complète la ligne, la colonne ou la diagonale
+	 * Attaque - si l'IA a 3 pions alignÃ©s, elle gagne
+	 *           si non, elle complÃ¨te la ligne, la colonne ou la diagonale
 	 * @return <ul>
 	 * 			<li>-1 s'il n'y a aucune ligne, diagonale ou colonne de 3 pions</li>
-	 * 			<li>le numéro de la colonne s'il faut défendre</li>
+	 * 			<li>le numÃ©ro de la colonne s'il faut dÃ©fendre</li>
 	 * 		   </ul>
 	 */
 	public int attaque() {
@@ -158,11 +158,11 @@ public class Partie implements Serializable {
 	
 	/**
 	 * Ajout d'un pion factice dans cette partie sur une grille tampon
-	 * et vérifie s'il y a possibilité pour le joueur de gagner
-	 * @param joueur  numéro du joueur qui ajoute ce pion
+	 * et vÃ©rifie s'il y a possibilitÃ© pour le joueur de gagner
+	 * @param joueur  numÃ©ro du joueur qui ajoute ce pion
 	 * @param colonne axe horizontal du jeton 
 	 * @param ligne   axe vertical du jeton
-	 * @param grille  à vérifier
+	 * @param grille  Ã  vÃ©rifier
 	 * 
 	 * @return true si cette colonne est gagnante, false sinon
 	 */
@@ -184,11 +184,11 @@ public class Partie implements Serializable {
 	
 	/**
 	 * Ajout d'un pion dans cette partie
-	 * @param joueur   numéro du joueur qui ajoute ce pion
+	 * @param joueur   numÃ©ro du joueur qui ajoute ce pion
 	 * @param colonne  axe horizontal du jeton 
 	 * @return cette partie avec le pion ajouter 
-	 * @throws IllegalArgumentException  Si le numéro de la colonne est incorrect 
-	 *                                   Si le numéro du joueur est incorrect
+	 * @throws IllegalArgumentException  Si le numÃ©ro de la colonne est incorrect 
+	 *                                   Si le numÃ©ro du joueur est incorrect
 	 */
 	public Partie ajouterPion(int joueur, int colonne) {
 		
@@ -215,13 +215,13 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Vérifie si il y a un alignement de 4 pions identiques
+	 * VÃ©rifie si il y a un alignement de 4 pions identiques
 	 * horizontal, vertical ou diagonal dans cette partie
 	 * @param colonne axe horizontal du jeton 
 	 * @param ligne   axe vertical du jeton
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la colonne</li>
 	 *         </ul>
 	 */
 	public int verifierAlignement(int colonne, int ligne) {
@@ -243,19 +243,18 @@ public class Partie implements Serializable {
 		if (resultatDiagonale != 0) {
 			return resultatDiagonale;
 		}
-		
 		return 0;
 	}
 	
 	/**
-	 * Vérifie si il y a un alignement de 4 pions identiques
+	 * VÃ©rifie si il y a un alignement de 4 pions identiques
 	 * horizontal, vertical ou diagonal dans une partie factive
 	 * @param colonne axe horizontal du jeton 
 	 * @param ligne   axe vertical du jeton
-	 * @param grille  à vérifier
+	 * @param grille  Ã  vÃ©rifier
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la colonne</li>
 	 *         </ul>
 	 */
 	private boolean verifierAlignement(int colonne, int ligne, int[][] grille, 
@@ -282,12 +281,12 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Permet la vérification de la colonne no colonne dans cette partie
-	 * @param colonne numéro de la colonne à verifier
+	 * Permet la vÃ©rification de la colonne no colonne dans cette partie
+	 * @param colonne numÃ©ro de la colonne Ã  verifier
 	 * @param colonne axe horizontal du jeton 
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la colonne</li>
 	 *         </ul>
 	 */
 	private int verifierColonne(int colonne) {
@@ -305,12 +304,12 @@ public class Partie implements Serializable {
 	} 
 	
 	/**
-	 * Permet la vérification de la colonne no colonne
+	 * Permet la vÃ©rification de la colonne no colonne
 	 * @param colonne axe horizontal du jeton 
-	 * @param grille  à vérifier
+	 * @param grille  Ã  vÃ©rifier
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la colonne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la colonne</li>
 	 *         </ul>
 	 */
 	private int verifierColonne(int colonne, int[][] grille) {
@@ -328,13 +327,13 @@ public class Partie implements Serializable {
 	} 
 	
 	/**
-	 * Permet la vérification de la colonne no colonne
-	 * @param colonne numéro de la colonne à verifier
+	 * Permet la vÃ©rification de la colonne no colonne
+	 * @param colonne numÃ©ro de la colonne Ã  verifier
 	 * @param colonne axe horizontal du jeton 
-	 * @param grille  à vérifier
+	 * @param grille  Ã  vÃ©rifier
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 3 est présent dans la colonne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 3 est prÃ©sent dans la colonne</li>
 	 *         </ul>
 	 */
 	private int verifierColonne3Jetons(int colonne, int[][] grille) {
@@ -351,13 +350,13 @@ public class Partie implements Serializable {
 	} 
 	
 	/**
-	 * Permet la vérification de la colonne no colonne
-	 * @param colonne numéro de la colonne à verifier
+	 * Permet la vÃ©rification de la colonne no colonne
+	 * @param colonne numÃ©ro de la colonne Ã  verifier
 	 * @param colonne axe horizontal du jeton 
-	 * @param grille  à vérifier
+	 * @param grille  Ã  vÃ©rifier
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 2 est présent dans la colonne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 2 est prÃ©sent dans la colonne</li>
 	 *         </ul>
 	 */
 	private int verifierColonne2Jetons(int colonne, int[][] grille) {
@@ -374,11 +373,11 @@ public class Partie implements Serializable {
 	} 
 	
 	/**
-	 * Permet la vérification de la ligne no ligne
+	 * Permet la vÃ©rification de la ligne no ligne
 	 * @param ligne   axe vertical du jeton
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la ligne</li>
 	 *         </ul>
 	 */
 	private int verifierLigne(int ligne) {
@@ -396,12 +395,12 @@ public class Partie implements Serializable {
 	}
 	
 	 /**
-	  * Permet la vérification de la ligne no ligne
+	  * Permet la vÃ©rification de la ligne no ligne
 	  * @param ligne   axe vertical du jeton
-	  * @param grille  à vérifier
+	  * @param grille  Ã  vÃ©rifier
 	  * @return <ul>
-	  *		 <li>Le numéro du joueur gagnant</li>
-	  *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	  *		 <li>Le numÃ©ro du joueur gagnant</li>
+	  *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la ligne</li>
 	  *         </ul>
 	  */
 	 private int verifierLigne(int ligne, int[][] grille) {
@@ -419,12 +418,12 @@ public class Partie implements Serializable {
 	 }
 		
 	 /**
-	  * Permet la vérification de la ligne no ligne
+	  * Permet la vÃ©rification de la ligne no ligne
 	  * @param ligne   axe vertical du jeton
-	  * @param grille  à vérifier
+	  * @param grille  Ã  vÃ©rifier
 	  * @return <ul>
-	  *		 <li>Le numéro du joueur gagnant</li>
-	  *		 <li>0 si aucun alignement de 3 est présent dans la ligne</li>
+	  *		 <li>Le numÃ©ro du joueur gagnant</li>
+	  *		 <li>0 si aucun alignement de 3 est prÃ©sent dans la ligne</li>
 	  *         </ul>
 	  */
 	 private int verifierLigne3Jetons(int ligne, int[][] grille) {
@@ -441,12 +440,12 @@ public class Partie implements Serializable {
 	 }
 		
 	 /**
-	  * Permet la vérification de la ligne no ligne
+	  * Permet la vÃ©rification de la ligne no ligne
 	  * @param ligne   axe vertical du jeton
-	  * @param grille  à vérifier
+	  * @param grille  Ã  vÃ©rifier
 	  * @return <ul>
-	  *		 <li>Le numéro du joueur gagnant</li>
-	  *		 <li>0 si aucun alignement de 2 est présent dans la ligne</li>
+	  *		 <li>Le numÃ©ro du joueur gagnant</li>
+	  *		 <li>0 si aucun alignement de 2 est prÃ©sent dans la ligne</li>
 	  *         </ul>
 	  */
 	 private int verifierLigne2Jetons(int ligne, int[][] grille) {
@@ -463,12 +462,12 @@ public class Partie implements Serializable {
 	 }
 	 
 	/**
-	 * Permet la vérification des deux diagonales
+	 * Permet la vÃ©rification des deux diagonales
 	 * @param colonne axe horizontal du jeton 
 	 * @param ligne   axe vertical du jeton
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la ligne</li>
 	 *         </ul>
 	 */
 	private int verifierDiagonal(int colonne, int ligne) {
@@ -535,14 +534,14 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Permet la vérification des deux diagonales
+	 * Permet la vÃ©rification des deux diagonales
 	 * @param colonne  axe horizontal du jeton 
 	 * @param ligne    axe vertical du jeton
-	 * @param grille   à vérifier
-	 * @param nbJetons nombre de jetons qui doivent être alignés
+	 * @param grille   Ã  vÃ©rifier
+	 * @param nbJetons nombre de jetons qui doivent Ãªtre alignÃ©s
 	 * @return <ul>
-	 *		 <li>Le numéro du joueur gagnant</li>
-	 *		 <li>0 si aucun alignement de 4 est présent dans la ligne</li>
+	 *		 <li>Le numÃ©ro du joueur gagnant</li>
+	 *		 <li>0 si aucun alignement de 4 est prÃ©sent dans la ligne</li>
 	 *         </ul>
 	 */
 	private int verifierDiagonal(int colonne, int ligne, int[][] grille,
@@ -659,7 +658,7 @@ public class Partie implements Serializable {
 	
 	@Override
 	/**
-	 * Usage UNIQUEMENT pour le développement
+	 * Usage UNIQUEMENT pour le dÃ©veloppement
 	 */
 	public String toString() {
 		
