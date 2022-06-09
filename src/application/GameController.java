@@ -53,6 +53,8 @@ public class GameController extends ButtonFXMLController implements Initializabl
 	public static String couleurJoueur1;
 	public static String couleurJoueur2;
 	
+	public static Partie partie;
+	
 	public static int actualPlayer;
 		
 	@Override

@@ -73,6 +73,8 @@ public class PopUpController extends GameController implements Initializable{
 				actualPlayer = 2;
 				couleurJoueur2 = "yellow";
 				couleurJoueur1 = "red";
+				
+				partie = new Partie(player2.getText(), player1.getText());
 			} else {
 				
 				staticUsername1.setText(player2.getText());
@@ -80,8 +82,9 @@ public class PopUpController extends GameController implements Initializable{
 				actualPlayer = 1;
 				couleurJoueur1 = "yellow";
 				couleurJoueur2 = "red";
+				
+				partie = new Partie(player1.getText(), player2.getText());
 			}
-			staticUsername1.getStyleClass().add("inactive");
 			((Stage) button.getScene().getWindow()).close();
 		}
     }
