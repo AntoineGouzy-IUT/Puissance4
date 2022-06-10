@@ -1,52 +1,47 @@
 package application;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
-public class ButtonFXMLController {
+/**
+ * @author antoine.gouzy
+ * @author vincent.faure
+ * @author romain.courbaize
+ */
 
+public class MenuController implements Initializable{
 	
 	@FXML
 	public VBox rootPane;
+	
 	@FXML
 	protected static VBox previousScreen;
 	
-	@FXML
-	private Button button;
-	
-	@FXML
-	private Label userHelp,
-				  endGameMessage,
-				  label;
-
-	protected static int previousScreenNumber;
-	
-	protected static String previousScreenPath;
-	
+	private static final String RULES_PATH = "/ressource/rules.fxml";
 	private static final String MENU_PATH = "/ressource/menu.fxml";
 	private static final String CREDITS_PATH = "/ressource/credits.fxml";
-	private static final String MYGAMES_PATH = "/ressource/myGames.fxml";
 	
-	private static final String GAME_SELECTION_PATH = "/ressource/gameSelection.fxml";
-	private static final String GAME_PVC_PATH = "/ressource/gamePvC.fxml";
-	private static final String GAME_PVP_PATH = "/ressource/gamePvP.fxml";
-	private static final String RULES_PATH = "/ressource/rules.fxml";
+	protected static final String MYGAMES_PATH = "/ressource/myGames.fxml";
+	protected static final String GAME_SELECTION_PATH = "/ressource/gameSelection.fxml";
+	protected static final String GAME_PVC_PATH = "/ressource/gamePvC.fxml";
+	protected static final String GAME_PVP_PATH = "/ressource/gamePvP.fxml";
+	protected static final String POPUP_GAME_PVP_PATH = "/ressource/popUpPvP.fxml";
+	protected static final String POPUP_GAME_PVC_PATH = "/ressource/popUpPVC.fxml";
+	protected static final String ICON_PATH = "/ressource/assets/Logo_Puissance4_V4.png";
 	
-	private static final String POPUP_GAME_PVP_PATH = "/ressource/popUpPvP.fxml";  
-	private static final String POPUP_GAME_PVC_PATH = "/ressource/popUpPVC.fxml";
-		
-	private static final String ICON_PATH = "/ressource/assets/Logo_Puissance4_V4.png";
+	protected static String previousScreenPath;
 	
     /* menu.fxml actions */
     @FXML
@@ -143,4 +138,12 @@ public class ButtonFXMLController {
 
     	stage.show();
     }
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		previousScreen = rootPane;
+		previousScreenPath = MENU_PATH;
+	}
+
+
 }

@@ -7,16 +7,16 @@
 	-fx-pref-height: 705px;
 	-fx-pref-width: 1074px;
 	-fx-alignment: center;
-	-fx-spacing: 60px;
-	-fx-background-color: #EAEAEA;
+	-fx-spacing: 90px;
+	-fx-background-color: #EAEAEA; 
 }
 
 .menu{
 	-fx-background-color: #0267C2;
 	-fx-background-radius: 85px;
-	-fx-min-height: 319px;
+	-fx-min-height: 240px;
 	-fx-min-width: 522px;
-	-fx-max-height: 319px;
+	-fx-max-height: 240px;
 	-fx-max-width: 522px;
 }
 
@@ -141,8 +141,8 @@
 
 .white_medium_button{
 	-fx-font-family: 'Paytone One', sans-serif;
-	-fx-min-height: 60px;
-	-fx-min-width: 120px;
+	-fx-min-height: 80px;
+	-fx-min-width: 160px;
 	-fx-background-color: #FFFFFF;
 	-fx-background-radius: 50px;
 	-fx-font-size: 20px;
@@ -182,5 +182,27 @@
 .name {
 	-fx-font-family: 'M PLUS 1p', sans-serif;
 	-fx-font-size: 28px;
+	-fx-text-fill: #FFFFFF;
+}
+
+.my_games_pane {
+	-fx-padding: 50 0 50 0;
+	-fx-min-width: 1050px;
+	-fx-min-heigth: 1000px;
+	-fx-alignment: center;
+	-fx-spacing: 60px;
+}
+
+.my_games_title_container {
+	-fx-min-height: 155px;
+	-fx-min-width: 1000px;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 100px;
+	-fx-alignment: center;
+}
+
+.my_games_title {
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 40px;
 	-fx-text-fill: #FFFFFF;
 }

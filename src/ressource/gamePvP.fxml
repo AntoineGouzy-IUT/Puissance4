@@ -15,74 +15,74 @@
 			<children>
 				<HBox styleClass="board_game">
 					<children>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col0" styleClass="token_container" >
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col1" styleClass="token_container">
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col2" styleClass="token_container">
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col3" styleClass="token_container">
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col4" styleClass="token_container">
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col5" styleClass="token_container">
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
-						<VBox styleClass="token_container">
+						<VBox fx:id="col6" styleClass="token_container">
 							<children>
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
-								<Button  fx:id="button" styleClass="token" mnemonicParsing="false" onAction="#joue" />
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
+								<Label fx:id="jeton" styleClass="token" mnemonicParsing="false"/>
 							</children>
 						</VBox>
 					</children>

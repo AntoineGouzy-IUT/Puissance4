@@ -624,8 +624,24 @@ class TestPartieJUnit {
 		assertEquals(partieTest.verifierAlignement(1, 3), 0);
 		partieTest.ajouterPion(2, 1);
 		assertEquals(partieTest.verifierAlignement(1, 4), 2);
-
-
 	}
 
+	/**
+	 * Test method for {@link application.Partie#estComplet(int)}.
+	 */
+	@Test
+	public void testEstComplet() {
+		
+		Partie partieTest = new Partie("Michel", "Vincent");
+
+		assertFalse(partieTest.estComplet(1));
+		partieTest.ajouterPion(1, 1);
+		partieTest.ajouterPion(1, 1);
+		partieTest.ajouterPion(1, 1);
+		assertFalse(partieTest.estComplet(1));
+		partieTest.ajouterPion(1, 1);
+		partieTest.ajouterPion(1, 1);
+		partieTest.ajouterPion(1, 1);
+		assertTrue(partieTest.estComplet(1));
+	}
 }

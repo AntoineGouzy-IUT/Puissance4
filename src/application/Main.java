@@ -1,14 +1,24 @@
 package application; 
 
+
+import java.io.File;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
  
-public class Main extends Application{
+/**
+ * @author antoine.gouzy
+ * @author vincent.faure
+ * @author romain.courbaize
+ */
 
+public class Main extends Application{
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		
@@ -20,13 +30,28 @@ public class Main extends Application{
 		Image icon = new Image(getClass().getResourceAsStream("/ressource/assets/Logo_Puissance4_V4.png"));
 	    stage.getIcons().add(icon);
 		stage.show();
-	}
+		
+        File f = new File("p4.ser");
+
+        if (!f.createNewFile()) {
+        	System.out.println("File already exists");
+    		Parent popup = FXMLLoader.load(getClass().getResource("/ressource/popUpMyGames.fxml"));
+    		Scene scenePopup = new Scene(popup);
+    		Stage stagePopup = new Stage();
+    		stagePopup.setScene(scenePopup);
+    		stagePopup.initModality(Modality.WINDOW_MODAL);
+    		stagePopup.setResizable(false);
+    		Image iconPopup = new Image(getClass().getResourceAsStream("/ressource/assets/Logo_Puissance4_V4.png"));
+    		stagePopup.getIcons().add(iconPopup);
+
+    		stagePopup.show();
+        	
+        } else {
+             System.out.println("File created");
+        }
+    }
      
     public static void main(String[] args) {
         launch(args);
     }
 }
-
-/**
- * modif 
- */

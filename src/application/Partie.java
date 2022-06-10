@@ -27,7 +27,7 @@ public class Partie implements Serializable {
 	/** Nom du premier joueur */
 	private String nomJoueur1;
 	
-	/** Nom du deuxi�me joueur */
+	/** Nom du deuxième joueur */
 	private String nomJoueur2;
 	
 	/**
@@ -53,16 +53,17 @@ public class Partie implements Serializable {
 	 * Attaque - si l'IA a 3 pions alignés, elle gagne
 	 *           si non, elle complète la ligne, la colonne ou la diagonale
 	 */
-	public void ordinateur() {
+	public int[] ordinateur() {
 		
 		int resultatDefense;
 		
 		resultatDefense = defense();
 		
 		if (resultatDefense > -1) {
-			ajouterPion(2, resultatDefense);
+			return ajouterPion(2, resultatDefense);
+		} else {
+			return ajouterPion(2, attaque());
 		}
-		ajouterPion(2, attaque());
 	}
 	
 	/**
@@ -80,11 +81,13 @@ public class Partie implements Serializable {
 		
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(1, noColonneATester, grilleTmp, 4)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(1, noColonneATester, grilleTmp, 4)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
 		return -1;
 	}
@@ -111,6 +114,20 @@ public class Partie implements Serializable {
     }
 	
 	/**
+	 * Permet de tester si la grille de cette partie est pleine
+	 * @return true si la grille est pleine, false sinon 
+	 */
+	public boolean grilleComplete() {
+		
+		for (int noColonne = 0 ; noColonne < 7 ; noColonne++) {
+			if (!estComplet(noColonne)) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
 	 * Calcul la position d'un pion pour attaquer
 	 * Attaque - si l'IA a 3 pions alignés, elle gagne
 	 *           si non, elle complète la ligne, la colonne ou la diagonale
@@ -126,34 +143,51 @@ public class Partie implements Serializable {
 		/* Alignement de 4 Jetons */
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(2, noColonneATester, grilleTmp, 4)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(2, noColonneATester, grilleTmp, 4)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
 
 		/* Alignement de 3 Jetons */
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
 
 		/* Alignement de 2 Jetons */
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
+		
+		/* Placement al�atoire */
 		Random rand = new Random();
-		return rand.nextInt(7);
+		int colonneRand;
+		do {
+			colonneRand = rand.nextInt(7);
+		} while (estComplet(colonneRand));
+		return colonneRand;
+	}
+	
+	public boolean estComplet(int noColonne) {
+		
+		return grille[noColonne][5] != 0;
 	}
 	
 	/**
@@ -186,11 +220,12 @@ public class Partie implements Serializable {
 	 * Ajout d'un pion dans cette partie
 	 * @param joueur   numéro du joueur qui ajoute ce pion
 	 * @param colonne  axe horizontal du jeton 
-	 * @return cette partie avec le pion ajouter 
-	 * @throws IllegalArgumentException  Si le numéro de la colonne est incorrect 
-	 *                                   Si le numéro du joueur est incorrect
+	 * @return sous la forme d'un tableau 
+	 *         {colonne, ligne, le r�sultat de la v�rification}
+	 * @throws IllegalArgumentException  Si le num�ro de la colonne est incorrect 
+	 *                                   Si le num�ro du joueur est incorrect
 	 */
-	public Partie ajouterPion(int joueur, int colonne) {
+	public int[] ajouterPion(int joueur, int colonne) {
 		
 		int noVide;
 		
@@ -209,9 +244,8 @@ public class Partie implements Serializable {
 		}
 		grille[colonne][noVide] = joueur;
 		
-		verifierAlignement(colonne, noVide);
-		
-		return this;
+		int[] resultat = {colonne, noVide, verifierAlignement(colonne, noVide)};
+		return resultat;
 	}
 	
 	/**
@@ -247,8 +281,8 @@ public class Partie implements Serializable {
 	}
 	
 	/**
-	 * Vérifie si il y a un alignement de 4 pions identiques
-	 * horizontal, vertical ou diagonal dans une partie factive
+	 * V�rifie si il y a un alignement de 4 pions identiques
+	 * horizontal, vertical ou diagonal dans une partie factice
 	 * @param colonne axe horizontal du jeton 
 	 * @param ligne   axe vertical du jeton
 	 * @param grille  à vérifier
@@ -633,6 +667,7 @@ public class Partie implements Serializable {
 			 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 			
 			oos.writeObject(this);
+			System.out.println(this);
 		} catch (Exception erreurFichier) {
 			// TODO: handle exception
 		}
@@ -643,7 +678,7 @@ public class Partie implements Serializable {
 	 */
 	public void load() {
 		
-		try (FileInputStream fis = new FileInputStream("p4.ser");
+		try (FileInputStream fis = new FileInputStream("p4.ser"); 
 			 ObjectInputStream ois = new ObjectInputStream(fis)) {
 			
 			Partie partieLoad = (Partie)ois.readObject();

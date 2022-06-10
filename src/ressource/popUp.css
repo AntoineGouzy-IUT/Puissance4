@@ -1,6 +1,8 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 
 @import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@700&display=swap');
+
 
 .label_game{
 	-fx-font-family: 'Paytone One', sans-serif;
@@ -11,7 +13,6 @@
 	-fx-font-family: 'Paytone One', sans-serif;
 	-fx-font-size: 48px;
 	-fx-wrap-text: true;
-	-fx-max-width: 597px;
 	-fx-text-alignment: center;
 }
 
@@ -27,8 +28,24 @@
 	-fx-min-height: 350px;
 	-fx-min-width: 1000px;
 	-fx-alignment: center;
-	-fx-spacing: 39px;
+	-fx-spacing: 120px;
 	-fx-background-color: #EAEAEA;
+}
+
+.small_popUp_wrap_text{
+	-fx-min-height: 350px;
+	-fx-min-width: 1000px;
+	-fx-alignment: center;
+	-fx-spacing: 56px;
+	-fx-background-color: #EAEAEA;
+}
+
+.label_exit_wrap{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 48px;
+	-fx-wrap-text: true;
+	-fx-max-width: 597px;
+	-fx-text-alignment: center;
 }
 
 .popUpSolo{

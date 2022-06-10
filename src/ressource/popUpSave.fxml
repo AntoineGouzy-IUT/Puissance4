@@ -11,6 +11,6 @@
       fx:controller="application.PopUpController">
 	<children>
 		<Label styleClass="label_game" text="La partie a été sauvegardée" />
-		<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#goToMainMenu" text="Quitter" />
+		<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#exit" text="Quitter" />
 	</children>
 </VBox>

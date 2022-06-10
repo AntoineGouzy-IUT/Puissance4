@@ -6,9 +6,9 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="rootPane" styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.GameController">
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
    <children>
-      <ScrollPane prefHeight="707.0" prefWidth="1074.0" styleClass="srollpane">
+      <ScrollPane styleClass="srollpane">
          <content>
             <VBox styleClass="rules_pane">
                <children>
@@ -18,7 +18,7 @@
 		                  <Label styleClass="rules_title" text="Principe de base" />
 		                  <HBox styleClass="rules_text_container">
 		                     <children>
-		                        <Label styleClass="rules_text" text="Le puissance 4 se joue dans une grille de 6  lignes par 7 colonnes. Pour gagner la partie il faut être le premier a aligné 4 jetons de façon horizontale, vertical ou en diagonale.  Si lors d’une partie, tous les jetons sont joués sans qu’il y est d’alignement de jetons, la partie est déclaré nulle. " />
+		                        <Label styleClass="rules_text" text="Le puissance 4 se joue dans une grille de 6 lignes par 7 colonnes. Pour gagner la partie il faut être le premier a aligné 4 jetons de façon horizontale, vertical ou en diagonale.  Si lors d’une partie, tous les jetons sont joués sans qu’il y est d’alignement de jetons, la partie est déclaré nulle. " />
 		                        
 									<ImageView>
 								       <image>
@@ -56,7 +56,7 @@ L’ordinateur joue comme un humain, il insère  à son tour son jeton, de l’a
 	                  </VBox>
 	               <HBox styleClass="button_container">
 		               <children>
-		               		<Button fx:id="button" styleClass="white_medium_button" mnemonicParsing="false" onAction="#goBack" text="Retour" />
+		               		<Button styleClass="white_medium_button" mnemonicParsing="false" onAction="#goBack" text="Retour" />
 		               </children>
 	               </HBox>   
                </children>
