@@ -569,7 +569,6 @@ class TestPartieJUnit {
 		partieTest.ajouterPion(2, 0);
 		partieTest.ajouterPion(2, 0);
 		partieTest.ajouterPion(1, 0);
-		System.out.println(partieTest);
 		assertEquals(partieTest.verifierAlignement(0, 3), 1);
 		
 		/* Tests Lignes */
