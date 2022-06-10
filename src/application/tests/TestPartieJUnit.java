@@ -1,5 +1,7 @@
 /**
- * 
+ * TestPartieJUnit.java
+ * BUT INFO 1 2021/2022
+ * pas de droits d'auteur ni de copyright
  */
 package application.tests;
 
@@ -11,7 +13,8 @@ import application.Partie;
 
 /**
  * @author romain.courbaize
- *
+ * @author antoine.gouzy
+ * @author vincent.faure
  */
 class TestPartieJUnit {
 
@@ -551,6 +554,22 @@ class TestPartieJUnit {
 		partieTest.ajouterPion(2, 3);
 		partieTest.ajouterPion(1, 3);
 		assertEquals(partieTest.verifierAlignement(3, 3), 1);
+
+		partieTest = new Partie("Michel", "Vincent");
+		partieTest.ajouterPion(1, 3);
+		assertEquals(partieTest.verifierAlignement(3, 0), 0);
+		partieTest.ajouterPion(2, 2);
+		partieTest.ajouterPion(1, 2);
+		assertEquals(partieTest.verifierAlignement(2, 1), 0);
+		partieTest.ajouterPion(2, 1);
+		partieTest.ajouterPion(2, 1);
+		partieTest.ajouterPion(1, 1);
+		assertEquals(partieTest.verifierAlignement(1, 2), 0);
+		partieTest.ajouterPion(2, 0);
+		partieTest.ajouterPion(2, 0);
+		partieTest.ajouterPion(2, 0);
+		partieTest.ajouterPion(1, 0);
+		assertEquals(partieTest.verifierAlignement(0, 3), 1);
 		
 		/* Tests Lignes */
 		
