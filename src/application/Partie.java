@@ -61,8 +61,9 @@ public class Partie implements Serializable {
 		
 		if (resultatDefense > -1) {
 			ajouterPion(2, resultatDefense);
+		} else {
+			ajouterPion(2, attaque());
 		}
-		ajouterPion(2, attaque());
 	}
 	
 	/**
