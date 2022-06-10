@@ -186,11 +186,12 @@ public class Partie implements Serializable {
 	 * Ajout d'un pion dans cette partie
 	 * @param joueur   numéro du joueur qui ajoute ce pion
 	 * @param colonne  axe horizontal du jeton 
-	 * @return cette partie avec le pion ajouter 
+	 * @return sous la forme d'un tableau 
+	 *         {colonne, ligne, le résultat de la vérification}
 	 * @throws IllegalArgumentException  Si le numéro de la colonne est incorrect 
 	 *                                   Si le numéro du joueur est incorrect
 	 */
-	public Partie ajouterPion(int joueur, int colonne) {
+	public int[] ajouterPion(int joueur, int colonne) {
 		
 		int noVide;
 		
@@ -211,7 +212,8 @@ public class Partie implements Serializable {
 		
 		verifierAlignement(colonne, noVide);
 		
-		return this;
+		int[] resultat = {colonne, noVide, verifierAlignement(colonne, noVide)};
+		return resultat;
 	}
 	
 	/**
@@ -249,7 +251,7 @@ public class Partie implements Serializable {
 	
 	/**
 	 * Vérifie si il y a un alignement de 4 pions identiques
-	 * horizontal, vertical ou diagonal dans une partie factive
+	 * horizontal, vertical ou diagonal dans une partie factice
 	 * @param colonne axe horizontal du jeton 
 	 * @param ligne   axe vertical du jeton
 	 * @param grille  à vérifier
