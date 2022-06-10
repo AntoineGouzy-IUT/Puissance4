@@ -667,7 +667,6 @@ public class Partie implements Serializable {
 			 ObjectOutputStream oos = new ObjectOutputStream(fos)) {
 			
 			oos.writeObject(this);
-			System.out.println(this);
 		} catch (Exception erreurFichier) {
 			// TODO: handle exception
 		}

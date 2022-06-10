@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="rootPane" styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@../CSS/menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MenuController">
    <children>
       <ScrollPane styleClass="srollpane">
          <content>
@@ -22,7 +22,7 @@
 		                        
 									<ImageView>
 								       <image>
-								          <Image url="@assets/RulesBasicGame.png" />
+								          <Image url="@../assets/RulesBasicGame.png" />
 								       </image>
 								    </ImageView>
 		                     </children>
@@ -33,7 +33,7 @@
 		                        <Label styleClass="rules_text" text="Pour commencer une partie de puissance 4, on désigne aléatoirement le premier joueur. Celui­-ci met un de ses jetons de couleur dans l’une des colonnes de son choix. Le jeton tombe alors en bas de la colonne." />
 		                        	  <ImageView>
 								         <image>
-								            <Image url="@assets/RulesPvpOne.png" />
+								            <Image url="@../assets/RulesPvpOne.png" />
 								         </image>
 								      </ImageView>
 		                     </children>
@@ -43,7 +43,7 @@
 		                        <Label styleClass="rules_text" text="Le deuxième joueur insère à son tour son jeton, de l’autre couleur dans la colonne de son choix. Et ainsi de suite jusqu’à obtenir une rangée de 4 jetons de même couleur." />
 		                        	  <ImageView>
 								         <image>
-								            <Image url="@assets/RulesPvpTwo.png" />
+								            <Image url="@../assets/RulesPvpTwo.png" />
 								         </image>
 								      </ImageView>
 		                     </children>

@@ -7,17 +7,17 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="rootPane" styleClass="small_popUp_wrap_text" stylesheets="@popUp.css"	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
-      fx:controller="application.PopUpController">
+<VBox fx:id="rootPane" styleClass="small_popUp" stylesheets="@../CSS/popUp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+	  fx:controller="application.PopUpController">
 	<children>
-		<Label styleClass="label_exit_wrap" text="Vous êtes sur le point de quitter la partie" />
+		<Label fx:id="endGameMessage" styleClass="label_exit" />
 		<HBox styleClass="button_container_popUp_exit">
 			<children>
-				<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#closePopUp" text="Annuler" />
+				<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#goToGameSelection" text="Menu" />
 				<HBox styleClass="button_container_right_popUp_exit">
 					<children>
 						<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#exit" text="Quitter" />
-						<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#save" text="Sauvegarder" />
+						<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#replayPvP" text="Rejouer" />
 					</children>
 				</HBox>
 			</children>

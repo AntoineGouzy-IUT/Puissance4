@@ -29,16 +29,16 @@ public class MenuController implements Initializable{
 	@FXML
 	protected static VBox previousScreen;
 	
-	private static final String RULES_PATH = "/ressource/rules.fxml";
-	private static final String MENU_PATH = "/ressource/menu.fxml";
-	private static final String CREDITS_PATH = "/ressource/credits.fxml";
+	private static final String RULES_PATH = "/ressource/FXML/rules.fxml";
+	private static final String MENU_PATH = "/ressource/FXML/menu.fxml";
+	private static final String CREDITS_PATH = "/ressource/FXML/credits.fxml";
 	
-	protected static final String MYGAMES_PATH = "/ressource/myGames.fxml";
-	protected static final String GAME_SELECTION_PATH = "/ressource/gameSelection.fxml";
-	protected static final String GAME_PVC_PATH = "/ressource/gamePvC.fxml";
-	protected static final String GAME_PVP_PATH = "/ressource/gamePvP.fxml";
-	protected static final String POPUP_GAME_PVP_PATH = "/ressource/popUpPvP.fxml";
-	protected static final String POPUP_GAME_PVC_PATH = "/ressource/popUpPVC.fxml";
+	protected static final String MYGAMES_PATH = "/ressource/FXML/myGames.fxml";
+	protected static final String GAME_SELECTION_PATH = "/ressource/FXML/gameSelection.fxml";
+	protected static final String GAME_PVC_PATH = "/ressource/FXML/gamePvC.fxml";
+	protected static final String GAME_PVP_PATH = "/ressource/FXML/gamePvP.fxml";
+	protected static final String POPUP_GAME_PVP_PATH = "/ressource/FXML/popUpPvP.fxml";
+	protected static final String POPUP_GAME_PVC_PATH = "/ressource/FXML/popUpPVC.fxml";
 	protected static final String ICON_PATH = "/ressource/assets/Logo_Puissance4_V4.png";
 	
 	protected static String previousScreenPath;
@@ -142,7 +142,9 @@ public class MenuController implements Initializable{
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		previousScreen = rootPane;
-		previousScreenPath = MENU_PATH;
+		
+		/* Si reouverture de partie fonctionne */
+		//previousScreenPath = MENU_PATH;
 	}
 
 

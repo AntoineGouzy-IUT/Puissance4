@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:id="rootPane" styleClass="main" stylesheets="@game.css"
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@../CSS/game.css"
 	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="application.GameController">
 	<children>
@@ -95,12 +95,12 @@
 							<children>
 								<ImageView fx:id="redToken">
 									<image>
-										<Image url="@assets/TokenRedInactive.png" />
+										<Image url="@../assets/TokenRedInactive.png" />
 									</image>
 								</ImageView>
 								<ImageView fx:id="yellowToken">
 									<image>
-										<Image url="@assets/TokenYellowActive.png" />
+										<Image url="@../assets/TokenYellowActive.png" />
 									</image>
 								</ImageView>
 							</children>

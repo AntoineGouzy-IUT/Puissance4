@@ -43,7 +43,7 @@ public class PopUpController extends GameController implements Initializable{
 	private Label userHelp,
 				  endGameMessage;
 	
-	private static final String POPUP_SAVE_PATH = "/ressource/popUpSave.fxml";
+	private static final String POPUP_SAVE_PATH = "/ressource/FXML/popUpSave.fxml";
 	
 	
     @FXML
@@ -73,7 +73,6 @@ public class PopUpController extends GameController implements Initializable{
 			
 			Random rand = new Random(); 
 			alea = rand.nextInt(1,3);
-			System.out.println(alea);
 			
 			if (alea == 1) {
 				
@@ -144,15 +143,12 @@ public class PopUpController extends GameController implements Initializable{
     
     @FXML
     public void goToMyGames (Event e) throws IOException {
-    	 
+    	//TODO Corriger probleme sauvegarde
     	rootPane = previousScreen;
     	//VBox pane = FXMLLoader.load(getClass().getResource(MYGAMES_PATH));
-    	
-    	
+
         partie = new Partie("j1", "j2");
-    	partie.load();
-    	System.out.println(partie.toString());
-    	
+    	partie.load();   	
     	
     	//rootPane.getChildren().setAll(pane);
     	

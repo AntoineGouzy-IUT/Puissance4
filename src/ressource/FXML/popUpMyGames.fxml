@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox styleClass="small_popUp" stylesheets="@popUp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PopUpController">
+<VBox styleClass="small_popUp" stylesheets="@../CSS/popUp.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.PopUpController">
   	<children>
 		<Label styleClass="label_game" text="Voulez-vous reprendre une partie ?" />
 		<HBox styleClass="button_container_popUp">

@@ -1,6 +1,5 @@
 package application;
 
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -68,10 +67,10 @@ public class GameController extends MenuController implements Initializable{
 	protected Image yellowInactiveToken = new Image(getClass().getResourceAsStream("/ressource/assets/TokenYellowInactive.png"));
 	private Image yellowActiveToken = new Image(getClass().getResourceAsStream("/ressource/assets/TokenYellowActive.png"));
 
-	private static final String POPUP_RULES_PATH = "/ressource/popUpRules.fxml";
-	private static final String POPUP_EXIT_PATH = "/ressource/popUpExit.fxml";
-	private static final String POPUP_ENDGAMEPVC_PATH = "/ressource/popUpEndGamePvc.fxml";
-	private static final String POPUP_ENDGAMEPVP_PATH = "/ressource/popUpEndGamePvp.fxml";
+	private static final String POPUP_RULES_PATH = "/ressource/FXML/popUpRules.fxml";
+	private static final String POPUP_EXIT_PATH = "/ressource/FXML/popUpExit.fxml";
+	private static final String POPUP_ENDGAMEPVC_PATH = "/ressource/FXML/popUpEndGamePvc.fxml";
+	private static final String POPUP_ENDGAMEPVP_PATH = "/ressource/FXML/popUpEndGamePvp.fxml";
 	
 	public static String couleurJoueur1;
 	public static String couleurJoueur2;

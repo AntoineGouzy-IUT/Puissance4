@@ -59,7 +59,7 @@
 	-fx-min-height: 60px;
 	-fx-max-width: 60px;
 	-fx-max-height: 60px;
-	-fx-background-image: url("assets/HelpIcon.png");
+	-fx-background-image: url("../assets/HelpIcon.png");
 	-fx-background-size: cover;
 	-fx-background-color: transparent;
 }
@@ -101,19 +101,19 @@
 }
 
 .yellow_token {
-	-fx-background-image: url("assets/TokenYellowActive.png");
+	-fx-background-image: url("../assets/TokenYellowActive.png");
 	-fx-background-color: transparent;
 	-fx-background-size: cover;
 }
 
 .red_token {
-	-fx-background-image: url("assets/TokenRedActive.png");
+	-fx-background-image: url("../assets/TokenRedActive.png");
 	-fx-background-color: transparent;
 	-fx-background-size: cover;
 }
 
 .red_token{
-	-fx-background-image: url("assets/TokenRedActive.png");
+	-fx-background-image: url("../assets/TokenRedActive.png");
 	-fx-background-color: transparent;
 	-fx-background-size: cover;
 }

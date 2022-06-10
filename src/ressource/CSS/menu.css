@@ -28,24 +28,24 @@
 }
 
 .new_game{
-	-fx-background-image: url("assets/NewGameInactive.png");
+	-fx-background-image: url("../assets/NewGameInactive.png");
 }
 .new_game:hover{
-	-fx-background-image: url("assets/NewGameActive.png");
+	-fx-background-image: url("../assets/NewGameActive.png");
 }
 
 .my_games{
-	-fx-background-image: url("assets/MyGamesInactive.png");
+	-fx-background-image: url("../assets/MyGamesInactive.png");
 }
 .my_games:hover{
-	-fx-background-image: url("assets/MyGamesActive.png");
+	-fx-background-image: url("../assets/MyGamesActive.png");
 }
 
 .credits{
-	-fx-background-image: url("assets/CreditsInactive.png");
+	-fx-background-image: url("../assets/CreditsInactive.png");
 }
 .credits:hover{
-	-fx-background-image: url("assets/CreditsActive.png");
+	-fx-background-image: url("../assets/CreditsActive.png");
 }
 
 .menu_game{
@@ -64,31 +64,31 @@
 }
 
 .pvp{
-	-fx-background-image: url("assets/PvPInactive.png");
+	-fx-background-image: url("../assets/PvPInactive.png");
 }
 .pvp:hover{
-	-fx-background-image: url("assets/PvPActive.png");
+	-fx-background-image: url("../assets/PvPActive.png");
 }
 
 .pvo{
-	-fx-background-image: url("assets/PvOInactive.png");
+	-fx-background-image: url("../assets/PvOInactive.png");
 }
 .pvo:hover{
-	-fx-background-image: url("assets/PvOActive.png");
+	-fx-background-image: url("../assets/PvOActive.png");
 }
 
 .rules{
-	-fx-background-image: url("assets/RulesInactive.png");
+	-fx-background-image: url("../assets/RulesInactive.png");
 }
 .rules:hover{
-	-fx-background-image: url("assets/RulesActive.png");
+	-fx-background-image: url("../assets/RulesActive.png");
 }
 
 .back{
-	-fx-background-image: url("assets/BackInactive.png");
+	-fx-background-image: url("../assets/BackInactive.png");
 }
 .back:hover{
-	-fx-background-image: url("assets/BackActive.png");
+	-fx-background-image: url("../assets/BackActive.png");
 }
  
 .scrollpane{

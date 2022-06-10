@@ -22,7 +22,7 @@ public class Main extends Application{
 	@Override
 	public void start(Stage stage) throws Exception {
 		
-		Parent root = FXMLLoader.load(getClass().getResource("/ressource/menu.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("/ressource/FXML/menu.fxml"));
 		Scene scene = new Scene(root, 1074,705);
 		stage.setTitle("Puissance4");
 		stage.setScene(scene);
@@ -34,8 +34,7 @@ public class Main extends Application{
         File f = new File("p4.ser");
 
         if (!f.createNewFile()) {
-        	System.out.println("File already exists");
-    		Parent popup = FXMLLoader.load(getClass().getResource("/ressource/popUpMyGames.fxml"));
+    		Parent popup = FXMLLoader.load(getClass().getResource("/ressource/FXML/popUpMyGames.fxml"));
     		Scene scenePopup = new Scene(popup);
     		Stage stagePopup = new Stage();
     		stagePopup.setScene(scenePopup);
@@ -45,9 +44,6 @@ public class Main extends Application{
     		stagePopup.getIcons().add(iconPopup);
 
     		stagePopup.show();
-        	
-        } else {
-             System.out.println("File created");
         }
     }
      
