@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.ButtonFXMLController">
+   <children>
+   	  <Label styleClass="label_game" text="Modes de jeu" />
+      <VBox alignment="CENTER" styleClass="menu_game">
+         <children>
+            <Button mnemonicParsing="false" onAction="#playerVersusPlayer">
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="pvp" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#playerVersusComputer">
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="pvo" />
+               </styleClass>
+            </Button>
+            <Button fx:id="buttonHelpGameSelection" mnemonicParsing="false" onAction="#goToRules">
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="rules" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goBack" >
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="back" />
+               </styleClass>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</VBox>

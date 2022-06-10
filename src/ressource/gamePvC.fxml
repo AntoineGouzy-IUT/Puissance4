@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@game.css"
+	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="application.GameController">
+	<children>
+		<HBox styleClass="game_container">
+			<children>
+				<HBox styleClass="board_game">
+					<children>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+						<VBox styleClass="token_container">
+							<children>
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+								<Button styleClass="token" mnemonicParsing="false" />
+							</children>
+						</VBox>
+					</children>
+				</HBox>
+				<VBox styleClass="info_container">
+					<children>
+						<Button fx:id="buttonHelpPVP" styleClass="help" mnemonicParsing="false" onAction="#goToRules"/>
+						<Label fx:id="username1" styleClass="username" text="Ordinateur" />
+						<VBox styleClass="token_information">
+							<children>
+								<ImageView>
+									<image>
+										<Image url="@assets/TokenRedInactive.png" />
+									</image>
+								</ImageView>
+								<ImageView>
+									<image>
+										<Image url="@assets/TokenYellowActive.png" />
+									</image>
+								</ImageView>
+							</children>
+						</VBox>
+						<Label fx:id="username2" styleClass="username" text="Label" />
+						<Button styleClass="white_medium_button" mnemonicParsing="false" text="Quitter" onAction="#exit" />
+					</children>
+				</VBox>
+			</children>
+		</HBox>
+	</children>
+</VBox>
+

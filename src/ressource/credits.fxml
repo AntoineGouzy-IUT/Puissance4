@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.ButtonFXMLController">
+   <children>
+      <ScrollPane styleClass="credits_srcollpane">
+         <content>
+            <VBox styleClass="credits_pane">
+               <children>
+                  <Label styleClass="label_game" text="Credits" />
+                  <VBox styleClass="credits_container">
+                     <children>
+                        <Label styleClass="rules_title" text="Maquette" />
+                        <VBox styleClass="name_container">
+                           <children>
+                              <Label styleClass="name" text="Antoine Gouzy" />
+                              <Label styleClass="name" text="Romain Courbaize" />
+                              <Label styleClass="name" text="Vincent Faure" />
+                           </children>
+                        </VBox>
+                        <Label styleClass="rules_title" text="Développement" />
+                        <VBox styleClass="name_container">
+                           <children>
+                              <Label styleClass="name" text="Romain Courbaize" />
+                              <Label styleClass="name" text="Vincent Faure" />
+                              <Label styleClass="name" text="Antoine Gouzy" />
+                           </children>
+                        </VBox>
+                        <Label styleClass="rules_title" text="Illustration" />
+                        <Label styleClass="name" text="Clément Daures" />
+                     </children>
+                  </VBox>
+                  <HBox styleClass="button_container">
+                     <children>
+                        <Button mnemonicParsing="false" styleClass="white_medium_button" text="Retour" onAction="#goBack" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</VBox>

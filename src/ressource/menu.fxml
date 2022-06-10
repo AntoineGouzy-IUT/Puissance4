@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox fx:id="rootPane" styleClass="main" stylesheets="@menu.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.ButtonFXMLController">
+   <children>
+	  <ImageView>
+         <image>
+            <Image url="@assets/Logo_Puissance4_V3_resize.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" styleClass="menu">
+         <children>
+            <Button mnemonicParsing="false" onAction="#goToGameSelection">
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="new_game" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goToMyGames">
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="my_games" />
+               </styleClass>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#goToCredits">
+               <styleClass>
+                  <String fx:value="button_menu" />
+                  <String fx:value="credits" />
+               </styleClass>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</VBox>

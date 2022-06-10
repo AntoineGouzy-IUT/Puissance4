@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="rootPane" styleClass="small_popUp" stylesheets="@popUp.css"	xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="application.PopUpController">
+	<children>
+		<Label styleClass="label_exit" text="Vous êtes sur le point de quitter la partie" />
+		<HBox styleClass="button_container_popUp_exit">
+			<children>
+				<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#closePopUp" text="Annuler" />
+				<HBox styleClass="button_container_right_popUp_exit">
+					<children>
+						<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#goToMainMenu" text="Quitter" />
+						<Button fx:id="button" mnemonicParsing="false" styleClass="blue_tall_button" onAction="#save" text="Sauvegarder" />
+					</children>
+				</HBox>
+			</children>
+		</HBox>
+	</children>
+</VBox>

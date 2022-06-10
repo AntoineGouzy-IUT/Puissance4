@@ -1,0 +1,139 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+.label_game{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 48px;
+}
+
+.label_exit{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 48px;
+	-fx-wrap-text: true;
+	-fx-max-width: 597px;
+	-fx-text-alignment: center;
+}
+
+.popUp{
+	-fx-min-height: 471px;
+	-fx-min-width: 1029px;
+	-fx-alignment: center;
+	-fx-spacing: 39px;
+	-fx-background-color: #EAEAEA;
+}
+
+.small_popUp{
+	-fx-min-height: 350px;
+	-fx-min-width: 1000px;
+	-fx-alignment: center;
+	-fx-spacing: 39px;
+	-fx-background-color: #EAEAEA;
+}
+
+.popUpSolo{
+	-fx-spacing: 86px;
+}
+
+.user_container_duo{
+	-fx-min-height: 192px;
+	-fx-min-width: 615px;
+	-fx-max-height: 192px;
+	-fx-max-width: 615px;
+	-fx-alignment: center;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 50px;
+	-fx-alignment: center;
+}
+
+.user_info_container_duo{
+	-fx-min-height: 72px;
+	-fx-min-width: 445px;
+	-fx-max-height: 72px;
+	-fx-max-width: 445px;
+	-fx-alignment: center;
+	-fx-background-color: transparent;
+	-fx-spacing: 115px;
+	-fx-background-size: 0px;
+}
+
+.user_container_solo{
+	-fx-min-height: 92px;
+	-fx-min-width: 615px;
+	-fx-max-height: 92px;
+	-fx-max-width: 615px;
+	-fx-alignment: center;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 50px;
+	-fx-alignment: center;
+}
+
+.user_info_container_solo{
+	-fx-min-height: 72px;
+	-fx-min-width: 445px;
+	-fx-max-height: 72px;
+	-fx-max-width: 445px;
+	-fx-alignment: center;
+	-fx-background-color: transparent;
+	-fx-spacing: 115px;
+	-fx-background-size: 0px;
+}
+
+.label_user{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 24px;
+	-fx-text-fill: #FFFFFF;
+}
+
+.user_entry{
+	-fx-border-color: #000000;
+	-fx-border-radiux: 0px;
+	-fx-border-width: 2px;
+}
+
+.user_entry promtText{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 15px;
+	-fx-font-color: rgba(0, 0, 0, 0.45);
+}
+
+.help {
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 15px;
+	-fx-text-fill: #FFFFFF;
+}
+
+.button_container_popUp{
+	-fx-min-height: 99px;
+	-fx-min-width: 601px;
+	-fx-max-height: 99px;
+	-fx-max-width: 601px;
+	-fx-spacing: 235px;
+}
+
+.button_container_popUp_exit{
+	-fx-min-height: 80px;
+	-fx-min-width: 920px;
+	-fx-max-height: 80px;
+	-fx-max-width: 920px;
+	-fx-spacing: 330px;
+}
+
+.button_container_right_popUp_exit{
+	-fx-min-height: 80px;
+	-fx-min-width: 380px;
+	-fx-max-height: 80px;
+	-fx-max-width: 380px;
+	-fx-spacing: 20px;
+}
+
+.blue_tall_button{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-min-height: 80px;
+	-fx-min-width: 190px;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 50px;
+	-fx-font-size: 24px;
+	-fx-text-fill: #FFFFFF;
+/*    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 6);	*/
+}

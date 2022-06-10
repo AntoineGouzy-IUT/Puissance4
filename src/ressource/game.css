@@ -1,0 +1,122 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+.main{
+	-fx-pref-height: 705px;
+	-fx-pref-width: 1074px;
+	-fx-alignment: center;
+	-fx-spacing: 60px;
+}
+
+.game_container{
+	-fx-alignment: center;
+	-fx-spacing: 100px;
+}
+
+.board_game{
+	-fx-min-height: 560px;
+	-fx-min-width: 705px;
+	-fx-max-height: 560px;
+	-fx-max-width: 705px;
+	-fx-background-color: #0267C2;
+	-fx-background-radius: 85px;
+	-fx-alignment: center;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 6);
+}
+
+.token_container{
+	-fx-min-width: 95px;
+	-fx-min-height: 520px;
+	-fx-max-width: 95px;
+	-fx-max-height: 520px;
+	-fx-alignment: center;
+	-fx-spacing: 10px;
+}
+
+.token{
+	-fx-min-height: 75px;
+	-fx-min-width: 75px;
+	-fx-background-radius: 100px;
+	-fx-border-radius: 100px;
+	-fx-border-color: #000000;
+	-fx-border-width: 2px;
+	-fx-background-color: #FFFFFF;
+}
+
+.info_container{
+	-fx-min-width: 156px;
+	-fx-min-height: 705px;
+	-fx-max-width: 156px;
+	-fx-max-height: 705px;
+	-fx-spacing: 25px;
+	-fx-alignment: center;
+}
+
+.help{
+	-fx-min-width: 60px;
+	-fx-min-height: 60px;
+	-fx-max-width: 60px;
+	-fx-max-height: 60px;
+	-fx-background-image: url("assets/HelpIcon.png");
+	-fx-background-size: cover;
+	-fx-background-color: transparent;
+}
+
+.username{
+	-fx-min-width: 150px;
+	-fx-min-height: 103px;
+	-fx-max-width: 150px;
+	-fx-max-height: 103px;
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-font-size: 24px;
+	-fx-alignment: center;
+}
+
+.inactive{
+	-fx-text-fill : #8B8B8B;
+}
+
+.token_information{
+	-fx-min-width: 95px;
+	-fx-min-height: 220px;
+	-fx-max-width: 95px;
+	-fx-max-height: 220px;
+	-fx-background-color: #5B5B5B;
+	-fx-background-radius: 22px;
+	-fx-spacing: 50px;
+	-fx-alignment: center;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 6);
+}
+
+.white_medium_button{
+	-fx-font-family: 'Paytone One', sans-serif;
+	-fx-min-height: 60px;
+	-fx-min-width: 120px;
+	-fx-background-color: #FFFFFF;
+	-fx-background-radius: 50px;
+	-fx-font-size: 20px;
+	-fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 8, 0, 2, 6);
+}
+
+.yellow_token {
+	-fx-background-image: url("assets/TokenYellowActive.png");
+	-fx-background-color: transparent;
+	-fx-background-size: cover;
+}
+
+.red_token {
+	-fx-background-image: url("assets/TokenRedActive.png");
+	-fx-background-color: transparent;
+	-fx-background-size: cover;
+}
+
+.red_token{
+	-fx-background-image: url("assets/TokenRedActive.png");
+	-fx-background-color: transparent;
+	-fx-background-size: cover;
+}
+
+#button:disabled {
+	-fx-opacity: 1.0;
+}
