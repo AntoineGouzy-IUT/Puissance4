@@ -49,20 +49,22 @@ public class Partie implements Serializable {
 	
 	/**
 	 * Positionne le pion pour l'ordinateur
-	 * Défend  - si le joueur humain a 3 pions alignés
-	 * Attaque - si l'IA a 3 pions alignés, elle gagne
-	 *           si non, elle complète la ligne, la colonne ou la diagonale
+	 * D�fend  - si le joueur humain a 3 pions align�s
+	 * Attaque - si l'IA a 3 pions align�s, elle gagne
+	 *           si non, elle compl�te la ligne, la colonne ou la diagonale
+	 * @return sous la forme d'un tableau 
+	 *         {colonne, ligne, le r�sultat de la v�rification}
 	 */
-	public void ordinateur() {
+	public int[] ordinateur() {
 		
 		int resultatDefense;
 		
 		resultatDefense = defense();
 		
 		if (resultatDefense > -1) {
-			ajouterPion(2, resultatDefense);
+			return ajouterPion(2, resultatDefense);
 		} else {
-			ajouterPion(2, attaque());
+			return ajouterPion(2, attaque());
 		}
 	}
 	
@@ -230,8 +232,6 @@ public class Partie implements Serializable {
 			
 		}
 		grille[colonne][noVide] = joueur;
-		
-		verifierAlignement(colonne, noVide);
 		
 		int[] resultat = {colonne, noVide, verifierAlignement(colonne, noVide)};
 		return resultat;
