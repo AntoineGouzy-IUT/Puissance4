@@ -81,11 +81,13 @@ public class Partie implements Serializable {
 		
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(1, noColonneATester, grilleTmp, 4)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(1, noColonneATester, grilleTmp, 4)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
 		return -1;
 	}
@@ -127,34 +129,52 @@ public class Partie implements Serializable {
 		/* Alignement de 4 Jetons */
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(2, noColonneATester, grilleTmp, 4)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(2, noColonneATester, grilleTmp, 4)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
 
 		/* Alignement de 3 Jetons */
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
 
 		/* Alignement de 2 Jetons */
 		for (int noColonneATester = 0 ; noColonneATester < 7 ; noColonneATester++) {
 
-			grilleTmp = copie(grille);
-			if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
-				
-				return noColonneATester;
-			};
+			if (!estComplet(noColonneATester)) {
+				grilleTmp = copie(grille);
+				if (ajouterPionIA(2, noColonneATester, grilleTmp, 3)) {
+					
+					return noColonneATester;
+				}
+			}
 		}
+		
+		/* Placement aléatoire */
 		Random rand = new Random();
-		return rand.nextInt(7);
+		int colonneRand;
+		do {
+			colonneRand = rand.nextInt(7);
+		} while (estComplet(colonneRand));
+		return colonneRand;
+	}
+	
+	public boolean estComplet(int noColonne) {
+		
+		System.out.println(grille[noColonne][5] != 0);
+		return grille[noColonne][5] != 0;
 	}
 	
 	/**
