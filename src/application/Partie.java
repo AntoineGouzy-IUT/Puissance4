@@ -1,5 +1,5 @@
 /*
- * Partie.java                                   05/2022
+ * Partie.java                                   
  * BUT INFO 1 2021/2022
  * pas de droits d'auteur ni de copyright
  */
@@ -114,6 +114,20 @@ public class Partie implements Serializable {
  
         return copie;
     }
+	
+	/**
+	 * Permet de tester si la grille de cette partie est pleine
+	 * @return true si la grille est pleine, false sinon 
+	 */
+	public boolean grilleComplete() {
+		
+		for (int noColonne = 0 ; noColonne < 7 ; noColonne++) {
+			if (!estComplet(noColonne)) {
+				return false;
+			}
+		}
+		return true;
+	}
 	
 	/**
 	 * Calcul la position d'un pion pour attaquer
